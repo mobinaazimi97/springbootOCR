@@ -1,0 +1,136 @@
+/* Reset ساده */
+/* Reset و فونت */
+body {
+    direction: rtl;
+    font-family: 'Vazir', Tahoma, sans-serif;
+    background: linear-gradient(135deg, slategrey, white, dodgerblue); /* مشکی با طیف بنفش-آبی */
+    margin: 0;
+    padding: 2rem;
+    color: black; /* آبی روشن */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* تیتر اصلی */
+h1 {
+    text-align: center;
+    color: #7b61ff; /* بنفش روشن */
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px #7b61ff;
+}
+
+/* پیام بالا (مثلاً موفقیت در آپلود) */
+p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: black; /* آبی نئون */
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 6px #4ad9f9;
+}
+
+/* فرم آپلود */
+form {
+    background: linear-gradient(145deg, #1e1b2f, #28254e);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow:
+            0 0 10px #7b61ff,
+            0 0 20px #4ad9f9;
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-3px);
+    box-shadow:
+            0 0 20px #7b61ff,
+            0 0 40px #4ad9f9;
+}
+
+/* ورودی فایل */
+input[type="file"] {
+    border: 2px dashed #4ad9f9;
+    padding: 0.7rem;
+    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+    background-color: #1e1b2f;
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
+
+input[type="file"]:hover {
+    background-color: #4ad9f9;
+    color: black;
+    border-color: #7b61ff;
+}
+
+/* دکمه آپلود */
+input[type="submit"] {
+    background: linear-gradient(90deg, #302b63, white);
+    color: white;
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #7b61ff;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(90deg, #4ad9f9, #7b61ff);
+    box-shadow: 0 0 20px #4ad9f9;
+}
+
+/* باکس نتیجه */
+.result-box {
+    background: linear-gradient(145deg, #1e1b2f, #28254e);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow:
+            0 0 10px black,
+            0 0 20px black;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease-in-out;
+    color: black
+;
+}
+
+.result-box h2 {
+    color: black;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px black;
+}
+
+.result-box p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color: black;
+}
+
+/* انیمیشن ظاهر شدن */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

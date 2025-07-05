@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Detail</title>
+    <link rel="stylesheet" href="/css/imageDetails.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>Photo Detail</h1>
+    <p>Identifier : <span th:text="${image.id}"></span></p>
+    <img th:src="${imageBase64}" alt="Uploaded Photo">
+    <h2>Extracted Text</h2>
+    <p th:text="${image.extractedText}"></p>
+    <a th:href="'/image/' + ${image.id} + '/download'" download>Download the photo</a>
+    <br><br>
+    <a href="/images">Back To Photos Collection</a>
+</div>
+</body>
+</html>

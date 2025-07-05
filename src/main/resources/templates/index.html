@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload image</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+<h1>Upload The Photo & Extract The Text</h1>
+<p th:text="${message}"></p>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" accept="image/*" name="file">
+    <input type="submit" th:value="Upload">
+</form>
+
+<div th:if="${extractedText}">
+    <h2>Extracted Text</h2>
+    <p th:text="${extractedText}"></p>
+</div>
+</body>
+</html>

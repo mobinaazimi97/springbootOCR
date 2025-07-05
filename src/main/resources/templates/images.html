@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+    <link rel="stylesheet" href="/css/styleImages.css">
+    <style>
+        table{
+            width:100%;
+            border-collapse: collapse;
+        }
+        th,td{
+            border:1px solid black;
+            padding:8px;
+            text-align: center;
+        }
+        img{
+            max-width:200px;
+            height:auto;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Identifier</th>
+        <th>Photo</th>
+        <th>Extracted Text</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="image : ${images}">
+        <td th:text="${image.id}"></td>
+        <td><img th:src="${image.imageBase64}" alt="Uploaded Photo"></td>
+        <td th:text="${image.extractedText}"></td>
+        <td>
+            <a th:href="@{|/image/${image.id}/delete|}" onclick="return confirm('Are You Sure To Delete Photo?');">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/">Back To Main Page</a>
+</body>
+</html>
